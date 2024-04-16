@@ -11,6 +11,7 @@ import removeAccountGroup from "./removeAccountGroup.js";
 import removeAccountFromGroup from "./removeAccountFromGroup.js";
 import revokeAdminUIAccess from "./revokeAdminUIAccess.js";
 import sendResetAccountPasswordEmail from "./sendResetAccountPasswordEmail.js";
+import resetPasswordx from "./resetPasswordx.js";
 import setAccountDefaultEmail from "./setAccountDefaultEmail.js";
 import updateAccount from "./updateAccount.js";
 import updateAccountAddressBookEntry from "./updateAccountAddressBookEntry.js";
@@ -32,6 +33,7 @@ export default {
   removeAccountGroup,
   revokeAdminUIAccess,
   sendResetAccountPasswordEmail,
+  resetPasswordx,
   setAccountDefaultEmail,
   updateAccount,
   updateAccountAddressBookEntry,

@@ -1,7 +1,7 @@
 {
   "name": "@idigi/reaction-plugin-accounts",
   "description": "Accounts plugin for the Reaction API",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "type": "module",
   "engines": {

@@ -98,5 +98,5 @@ export default async function sendResetAccountPasswordEmail(context, input) {
   });
   if (!account) throw new ReactionError("not-found", "Account not found");
 
-  return await sendResetEmail(context, { ...input, account });
+  return await sendResetEmail(context, { app: {}, ...input, account });
 }
