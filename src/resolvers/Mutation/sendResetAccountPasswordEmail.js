@@ -1,3 +1,4 @@
+import { decodeAppOpaqueId, decodeShopOpaqueId } from "../../xforms/id.js";
 /**
  * @name Mutation/sendResetAccountPasswordEmail
  * @summary resolver for the sendResetAccountPasswordEmail GraphQL mutation
@@ -8,15 +9,19 @@
  * @param {Object} context - an object containing the per-request state
  * @returns {Object} r=sendResetAccountPasswordEmailPayload
  */
-export default async function sendResetAccountPasswordEmail(_, { input }, context) {
-  const { email, clientMutationId = null } = input;
-
-  const emailAddress = await context.mutations.sendResetAccountPasswordEmail(context, {
-    email
+export default async function sendResetAccountPasswordEmail(
+  _,
+  { input },
+  context,
+) {
+  const res = await context.mutations.sendResetPasswordEmailx(context, {
+    ...input,
+    shopId: decodeShopOpaqueId(input.shopId),
+    appId: decodeAppOpaqueId(
+      input.appId ||
+        context.requestHeaders.appid ||
+        context.requestHeaders["app-id"]
+    ),
   });
-
-  return {
-    email: emailAddress,
-    clientMutationId
-  };
+  return { ...input, ...res };
 }

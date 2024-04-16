@@ -11,9 +11,11 @@ const namespaces = {
   Address: "reaction/address",
   Group: "reaction/group",
   Invitation: "reaction/invitation",
-  Shop: "reaction/shop"
+  Shop: "reaction/shop",
+  App: "reaction/app"
 };
 
+export const decodeAppOpaqueId = decodeOpaqueIdForNamespace(namespaces.App);
 export const encodeAccountOpaqueId = encodeOpaqueId(namespaces.Account);
 export const encodeAddressOpaqueId = encodeOpaqueId(namespaces.Address);
 export const encodeGroupOpaqueId = encodeOpaqueId(namespaces.Group);

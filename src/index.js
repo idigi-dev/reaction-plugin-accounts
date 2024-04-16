@@ -24,7 +24,7 @@ export default async function register(app) {
     i18n,
     functionsByType: {
       preStartup: [extendAccountSchema, checkDatabaseVersion],
-      startup: [afterShopCreate]
+      startup: [afterShopCreate],
     },
     collections: {
       Accounts: {
@@ -35,25 +35,23 @@ export default async function register(app) {
           [{ groups: 1 }, { name: "c2_groups" }],
           [{ shopId: 1 }, { name: "c2_shopId" }],
           [{ userId: 1 }, { name: "c2_userId" }],
-          [{ shopId: 1, slug: 1 }]
-        ]
+          [{ shopId: 1, slug: 1 }],
+        ],
       },
       AccountInvites: {
         name: "AccountInvites",
-        indexes: [
-          [{ email: 1 }]
-        ]
+        indexes: [[{ email: 1 }]],
       },
       Groups: {
-        name: "Groups"
-      }
+        name: "Groups",
+      },
     },
     auth: {
-      accountByUserId
+      accountByUserId,
     },
     graphQL: {
       resolvers,
-      schemas
+      schemas,
     },
     mutations,
     queries,
@@ -61,7 +59,7 @@ export default async function register(app) {
     simpleSchemas: {
       Account,
       Group,
-      Profile
-    }
+      Profile,
+    },
   });
 }
